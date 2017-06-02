@@ -1,10 +1,15 @@
 <h1>New Item</h1>
-<div>
-  <%= form_for @item do |f| %>
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
-    </div>
-    <%= f.submit "Save" %>
-  <% end %>
-</div>
+<%= form_for @item do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  Mounting Type:
+  <p>
+    <%= f.fields_for :mountings do |mounting_form| %>
+      <%= mounting_form.label :name %>
+      <%= mounting_form.text_field :name %>
+    <% end %>
+  </p>
+  <div class="actions"><%= f.submit "Save" %></div>
+<% end %>
