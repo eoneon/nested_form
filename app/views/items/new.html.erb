@@ -6,9 +6,9 @@
   </div>
   Mounting Type:
   <p>
-    <%= f.fields_for :mountings do |mounting_form| %>
-      <%= mounting_form.label :name %>
-      <%= mounting_form.text_field :name %>
+    <%= f.fields_for :items_mountings do |mounting_form| %>
+      <%= mounting_form.label :mounting_id %>
+      <%= mounting_form.number_field :mounting_id %>
     <% end %>
   </p>
   <div class="actions"><%= f.submit "Save" %></div>
