@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    #@item.items_mountings.build
   end
 
   def create
