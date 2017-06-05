@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.items_mountings.build
   end
 
   def create
@@ -27,6 +26,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, items_mountings_attributes: [:mounting_id])
+    params.require(:item).permit(:name, items_mountings_attributes: [:item_id, :mounting_id])
   end
 end

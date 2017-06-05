@@ -1,3 +1,4 @@
+<%= params %>
 <h1>New Item</h1>
 <%= form_for @item do |f| %>
   <div class="field">
@@ -6,9 +7,10 @@
   </div>
   Mounting Type:
   <p>
-    <%= f.fields_for :items_mountings do |mounting_form| %>
-      <%= mounting_form.label :mounting_id %>
-      <%= mounting_form.number_field :mounting_id %>
+    <%= f.fields_for :items_mountings_attributes do |item_mounting| %>
+      <%= item_mounting.label :mounting_id %>
+      <%= collection_select(:item_mounting, :mounting_id, Mounting.all, :id, :name) %>
+      <%#= hidden_field :item_id, @item.id %>
     <% end %>
   </p>
   <div class="actions"><%= f.submit "Save" %></div>
