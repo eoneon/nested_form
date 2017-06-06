@@ -27,6 +27,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, items_mountings_attributes: [:item_id, :mounting_id])
+    params.require(:item).permit(:name, items_mountings_attributes: [:mounting_id])
   end
 end
