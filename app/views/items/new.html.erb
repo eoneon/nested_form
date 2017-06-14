@@ -4,6 +4,14 @@
     <div class="field">
       <%= f.label :name %><br />
       <%= f.text_field :name %>
+
+      <p>
+        Mounting:
+        <%= f.fields_for :categories do |category| %>
+          <%= category.label :mounting_id %>
+          <%= collection_select(:mounting, :id, Mounting.all, :id, :name) %>
+        <% end %>
+      </p>
     </div>
     <%= f.submit "Save" %>
   <% end %>
