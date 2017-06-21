@@ -1,2 +1,0 @@
-class Art < Category
-end

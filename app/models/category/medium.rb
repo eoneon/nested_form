@@ -1,2 +1,0 @@
-class Medium < Category
-end

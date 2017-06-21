@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root to: 'items#index'
   resources :items, except: [:edit, :update, :destroy]
-  resources :descriptions, only: [:index]
+  resources :descriptions, only: [:index, :create]
 end
