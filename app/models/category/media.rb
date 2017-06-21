@@ -1,0 +1,2 @@
+class Media < Category
+end

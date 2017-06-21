@@ -1,0 +1,2 @@
+class Signature < Category
+end
