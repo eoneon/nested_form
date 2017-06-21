@@ -6,12 +6,12 @@
       <%= f.text_field :name %>
     </div>
 
-    <div>Art Type:
+    <p>Art Type:
       <%= f.fields_for :categories do |category| %>
         <%= category.label :description_id %>
         <%= collection_select(:description, :id, Description.all, :id, :element) %>
       <% end %>
-    </div>
+    </p>
     <%= f.submit "Save" %>
   <% end %>
 </div>

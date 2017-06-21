@@ -18,6 +18,6 @@ class DescriptionsController < ApplicationController
   private
 
   def description_params
-    params.require(:mounting).permit(:element)
+    params.require(:description).permit(:element)
   end
 end
