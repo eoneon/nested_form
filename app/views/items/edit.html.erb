@@ -1,17 +1,9 @@
-<h1>New Item</h1>
+<h1>Edit Item</h1>
 <div>
   <%= form_for @item do |f| %>
     <div class="field">
       <%= f.label :name %><br />
       <%= f.text_field :name %>
-
-      <p>
-        Mounting:
-        <%= f.fields_for :categories do |category| %>
-          <%= category.label :mounting_id %>
-          <%= collection_select(:mounting, :id, Mounting.all, :id, :name) %>
-        <% end %>
-      </p>
     </div>
 
     <p>Art Type:

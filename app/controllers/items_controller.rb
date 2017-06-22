@@ -24,9 +24,31 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+    @item.categories.build
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.assign_attributes(item_params)
+
+    if @item.save
+      flash[:notice] = "Item was saved successfully."
+      redirect_to @item
+    else
+      flash.now[:alert] = "Error creating item. Please try again."
+      render :edit
+    end
+  end
+
   private
 
   def item_params
+<<<<<<< HEAD
     params.require(:item).permit(:name, categories_attributes: [:mounting_id])
+=======
+    params.require(:item).permit(:name, categories_attributes: [:description_id])
+>>>>>>> hmt_types
   end
 end

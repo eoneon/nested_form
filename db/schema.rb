@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170607154348) do
 
   create_table "categories", force: :cascade do |t|
@@ -22,6 +23,27 @@ ActiveRecord::Schema.define(version: 20170607154348) do
 
   add_index "categories", ["item_id"], name: "index_categories_on_item_id"
   add_index "categories", ["mounting_id"], name: "index_categories_on_mounting_id"
+=======
+ActiveRecord::Schema.define(version: 20170621232958) do
+
+  create_table "categories", force: :cascade do |t|
+    t.integer  "item_id"
+    t.integer  "description_id"
+    t.string   "type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "categories", ["description_id"], name: "index_categories_on_description_id"
+  add_index "categories", ["item_id"], name: "index_categories_on_item_id"
+
+  create_table "descriptions", force: :cascade do |t|
+    t.string   "element"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "kind"
+  end
+>>>>>>> hmt_types
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
