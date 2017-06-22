@@ -11,20 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170607154348) do
-
-  create_table "categories", force: :cascade do |t|
-    t.integer  "item_id"
-    t.integer  "mounting_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "categories", ["item_id"], name: "index_categories_on_item_id"
-  add_index "categories", ["mounting_id"], name: "index_categories_on_mounting_id"
-=======
-ActiveRecord::Schema.define(version: 20170621232958) do
+ActiveRecord::Schema.define(version: 20170622204925) do
 
   create_table "categories", force: :cascade do |t|
     t.integer  "item_id"
@@ -43,22 +30,8 @@ ActiveRecord::Schema.define(version: 20170621232958) do
     t.datetime "updated_at", null: false
     t.string   "kind"
   end
->>>>>>> hmt_types
 
   create_table "items", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "items_mountings", id: false, force: :cascade do |t|
-    t.integer "item_id",     null: false
-    t.integer "mounting_id", null: false
-  end
-
-  add_index "items_mountings", ["item_id", "mounting_id"], name: "index_items_mountings_on_item_id_and_mounting_id"
-
-  create_table "mountings", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

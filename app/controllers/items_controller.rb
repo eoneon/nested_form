@@ -45,10 +45,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-<<<<<<< HEAD
-    params.require(:item).permit(:name, categories_attributes: [:mounting_id])
-=======
     params.require(:item).permit(:name, categories_attributes: [:description_id])
->>>>>>> hmt_types
   end
 end
