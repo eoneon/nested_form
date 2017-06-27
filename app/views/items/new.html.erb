@@ -4,16 +4,24 @@
     <div class="field">
       <%= f.label :name %><br />
       <%= f.text_field :name %>
-    </div>
+    <!-- </div> -->
 
-    <div>Art Type:
+    <!-- <div>Art Type:
       <div class="field">
         <%= Description.all.each do |description| %>
           <%= check_box_tag "item[description_ids][]", description.id %>
           <%= description.element %> <br>
         <% end %>
       </div>
-    </div>
+    </div> -->
+
+    <p>ARTS
+      <%= f.fields_for :categories do |category| %>
+        <%= category.label :description_id %>
+        <%= collection_select(:description, :id, Description.all, :id, :element) %>
+        <%#= hidden_field :item_id, @item.id %>
+      <% end %>
+    </p>
     <%= f.submit "Save" %>
   <% end %>
 </div>
